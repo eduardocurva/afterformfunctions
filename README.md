@@ -36,10 +36,6 @@ Run: onSubmit
 Events: from spreadsheet - On form submit
 ```
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Authors
 
 * **eduardocurva** - *Initial work*
