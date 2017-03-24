@@ -7,13 +7,13 @@ var folder_id = '0B3E6BV82jlToc1huOFR5aUpwOGc';
 function sendEmails(emailAddress, file, name, key) {
     if (emailAddress !== '') {
 
-        var assunto = "[" + key + "] Application - 20XX";
-        var mensagem = "Hello," + name + "! <br /> Thanks for your application. <br /> Receipt is attached to this email. <br /> Regards!";
+        var subject = "[" + key + "] Application - 20XX";
+        var message = "Hello," + name + "! <br /> Thanks for your application. <br /> Receipt is attached to this email. <br /> Regards!";
 
         MailApp.sendEmail({
             to: emailAddress,
-            subject: assunto,
-            htmlBody: mensagem,
+            subject: subject,
+            htmlBody: message,
             attachments: [file.getAs(MimeType.PDF)]
         });
     }
@@ -21,12 +21,6 @@ function sendEmails(emailAddress, file, name, key) {
 
 //https://developers.google.com/apps-script/guides/triggers/events#form-submit
 function onFormSubmit(e) {
-    /*
-    fix the right indexes for your spreadsheet
-     */
-    var name = e.values[0];
-    var emailAddress = e.values[1];
-    var id = e.values[2];
 
     //generate a simple key but could also be a random function
     var key = nome.substring(0, 3) + rg.substring(0, 2),
@@ -34,7 +28,10 @@ function onFormSubmit(e) {
         copyId = copyFile.getId(),
         copyDoc = DocumentApp.openById(copyId),
         copyBody = copyDoc.getBody(),
-        pdfFile;
+        pdfFile,
+        name = e.values[0],
+        emailAddress = e.values[1],
+        id = e.values[2];
 
     copyBody.replaceText('%KEY%', key);
     copyBody.replaceText('%NOME%', name);
