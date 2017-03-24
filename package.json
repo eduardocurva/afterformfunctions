@@ -1,0 +1,31 @@
+{
+  "name": "afterformfunctions",
+  "version": "1.0.0",
+  "description": "functions to be used in onFormSubmit - google spreadsheets/google forms",
+  "main": "asd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardocurva/afterformfunctions.git"
+  },
+  "keywords": [
+    "google",
+    "spreadsheet",
+    "forms",
+    "apps",
+    "script",
+    "app",
+    "onFormSubmit"
+  ],
+  "author": "eduardocurva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardocurva/afterformfunctions/issues"
+  },
+  "homepage": "https://github.com/eduardocurva/afterformfunctions#readme",
+  "dependencies": {
+    "jscs": "^3.0.7"
+  }
+}
