@@ -7,7 +7,7 @@ var folder_id = '0B3E6BV82jlToc1huOFR5aUpwOGc';
 function sendEmails(emailAddress, file, name, key) {
     if (emailAddress !== '') {
 
-        var assunto = "[" + key + "] Application - 2017";
+        var assunto = "[" + key + "] Application - 20XX";
         var mensagem = "Hello," + name + "! <br /> Thanks for your application. <br /> Receipt is attached to this email. <br /> Regards!";
 
         MailApp.sendEmail({
@@ -29,12 +29,11 @@ function onFormSubmit(e) {
     var id = e.values[2];
 
     //generate a simple key but could also be a random function
-    var key = nome.substring(0, 3) + rg.substring(0, 2);
-    var copyFile = DriveApp.getFileById(document_model_id).makeCopy('Copy name - ' + name),
+    var key = nome.substring(0, 3) + rg.substring(0, 2),
+        copyFile = DriveApp.getFileById(document_model_id).makeCopy('Copy name - ' + name),
         copyId = copyFile.getId(),
         copyDoc = DocumentApp.openById(copyId),
         copyBody = copyDoc.getBody(),
-        columnIndex = 0,
         pdfFile;
 
     copyBody.replaceText('%KEY%', key);
