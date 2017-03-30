@@ -36,6 +36,10 @@ Run: onSubmit
 Events: from spreadsheet - On form submit
 ```
 
+## Where you can use it?
+
+Events, conferences, meetings or parties that need an application form with an email confirmation and confirmation code.
+
 ## Authors
 
 * **eduardocurva** - *Initial work*
